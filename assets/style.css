@@ -6,4 +6,24 @@
 
 body {
   background: url(images/lakka-beach.jpg) no-repeat center/cover;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  padding: 20px !important;
+}
+
+footer .brand-logo {
+  color: #0072C6;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding: 0;
+  white-space: nowrap;
 }
