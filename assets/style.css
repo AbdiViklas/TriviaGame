@@ -17,13 +17,20 @@ main {
 
 footer {
   background-color: rgba(255, 255, 255, 0.5) !important;
-  padding: 20px !important;
+  padding: 2vh !important;
+}
+
+footer * {
+  color: #0072C6;
+  display: inline-block;
 }
 
 footer .brand-logo {
-  color: #0072C6;
-  display: inline-block;
   font-size: 2.1rem;
   padding: 0;
   white-space: nowrap;
+}
+
+.center-wrapper {
+  width: 50vw;
 }
