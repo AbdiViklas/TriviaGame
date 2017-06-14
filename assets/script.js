@@ -14,13 +14,13 @@
 
 var questionArray = [
   {
-    question: "",
-    correctAnswer: "",
-    wrongAnswer1: "",
-    wrongAnswer2: "",
-    wrongAnswer3: "",
-    doneMessage: "",
-    image: ""
+    question: "Sierra Leone is located...",
+    correctAnswer: "in western Africa, between Guinea and Liberia",
+    wrongAnswer1: "in southern Africa, between Namibia and Zimbabwe",
+    wrongAnswer2: "in eastern Africa, between Somalia and Sudan",
+    wrongAnswer3: "just north of Greenland",
+    doneMessage: "Sierra Leone is a coastal counry in West Africa, with Liberia on its southeast and Guinea wrapping around its northern border.",
+    image: '<img width="600" src="https://maps.googleapis.com/maps/api/staticmap?center=sierra+leone&zoom=4&scale=1&size=600x300&maptype=roadmap&format=png&visual_refresh=true" alt="Google Map of sierra leone">'
   }
 ];
 
