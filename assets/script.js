@@ -11,3 +11,4 @@
   3c. User makes no choice and timer runs out, in which case ...
     4c. Display same page, with "Time's Up!"
 */
+
