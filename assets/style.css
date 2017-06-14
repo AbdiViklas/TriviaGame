@@ -3,3 +3,7 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
+body {
+  background: url(images/lakka-beach.jpg) no-repeat center/cover;
+}
