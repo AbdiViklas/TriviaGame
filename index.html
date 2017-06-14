@@ -3,10 +3,11 @@
   <head>
     <!--link reset-->
   <link rel="stylesheet" href="assets/reset.css">
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <!-- link Materialize CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-  <!-- link Materialize JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <!--link jQuery-->
   <!-- link own css -->
   <link rel="stylesheet" href="assets/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +15,17 @@
   <body>
     <main class="valign-wrapper">
       <div id="main-card" class="card">
-        <div class="card-content">
+        <div id="main-card-content" class="card-content">
           <span class="card-title">Sierra Leone Quiz</span>
+          <h5>
+            Think you know Sierra Leone? Test your Salone smarts with this quiz!
+          </h5>
+          <p>
+            Once you click the "START" button below, you'll have 20 seconds to answer each multiple-choice question. Good luck!
+          </p>
+          <div class="card-action">
+            <a id="startBtn" class="waves-effect waves-light btn-large pulse">START<i class="material-icons right">forward</i></a>
+          </div>
         </div>
       </div>
       
@@ -31,5 +41,10 @@
           </div> <!--/progress-->
         </div> <!--/progress-wrapper-->
     </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- link Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <!--link own JS-->
+    <script type="text/javascript" src="assets/script.js"></script>
   </body>
 </html>

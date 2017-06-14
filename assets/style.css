@@ -22,6 +22,12 @@ main {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
+.card .card-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #0072C6;
+}
+
 footer {
   background-color: rgba(255, 255, 255, 0.5) !important;
   padding: 2vh !important;
@@ -50,4 +56,12 @@ footer .brand-logo {
 .progress {
   display: inline-flex;
   width: 75%;
+}
+
+.btn, .btn-large {
+  background-color: #1EB53A;
+}
+
+.btn:hover, .btn-large:hover {
+  background-color: #22cb41;
 }

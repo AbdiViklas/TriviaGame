@@ -12,3 +12,20 @@
     4c. Display same page, with "Time's Up!"
 */
 
+var questionArray = [
+  {
+    question: "",
+    correctAnswer: "",
+    wrongAnswer1: "",
+    wrongAnswer2: "",
+    wrongAnswer3: "",
+    doneMessage: "",
+    image: ""
+  }
+];
+
+$("#startBtn").on(click, function () {
+  $("#main-card-content").html(`
+    
+  `);
+});
