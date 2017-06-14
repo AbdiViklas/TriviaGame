@@ -32,5 +32,15 @@ footer .brand-logo {
 }
 
 .center-wrapper {
-  width: 50vw;
+  width: 100%;
+}
+
+.progress-wrapper {
+  width: 100%;
+  padding: 0px 50px;
+}
+
+.progress {
+  display: inline-flex;
+  width: 75%;
 }
