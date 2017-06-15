@@ -20,7 +20,28 @@ var questionArray = [
     wrongAnswer2: "in eastern Africa, between Somalia and Sudan",
     wrongAnswer3: "just north of Greenland",
     doneMessage: "Sierra Leone is a coastal counry in West Africa, with Liberia on its southeast and Guinea wrapping around its northern border.",
-    image: '<img width="600" src="https://maps.googleapis.com/maps/api/staticmap?center=sierra+leone&zoom=4&scale=1&size=600x300&maptype=roadmap&format=png&visual_refresh=true" alt="Google Map of sierra leone">'
+    image: "assets\images\west_africa_map.png",
+    imageCaption: "Map of West Africa"
+  },
+  {
+    question: "Sierra Leone was, for over a century, a colony of...",
+    correctAnswer: "England",
+    wrongAnswer1: "Spain",
+    wrongAnswer2: "Germany",
+    wrongAnswer3: "the United States",
+    doneMessage: "Although the Portuguese, French, and Dutch were represented in the area in the 15th and 16th centuries, Sierra Leone became a British colony in 1787 and achieved full independence in 1960.",
+    image: "assets\images\Flag_of_Sierra_Leone_1916-1961.gif",
+    imageCaption: "Flag of Sierra Leone, 1916-1961"
+  },
+  {
+    question: "Sierra Leone was, for over a century, a colony of...",
+    correctAnswer: "England",
+    wrongAnswer1: "Spain",
+    wrongAnswer2: "Germany",
+    wrongAnswer3: "the United States",
+    doneMessage: "Although the Portuguese, French, and Dutch were represented in the area in the 15th and 16th centuries, Sierra Leone became a British colony in 1787 and achieved full independence in 1960.",
+    image: "assets\images\Flag_of_Sierra_Leone_1916-1961.gif",
+    imageCaption: "Flag of Sierra Leone, 1916-1961"
   }
 ];
 
