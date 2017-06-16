@@ -78,6 +78,8 @@ footer .brand-logo {
 
 .btn, .btn-large {
   background-color: #1EB53A;
+  padding: 0.5rem 2rem;
+  line-height: 1.2rem;
 }
 
 .btn:hover, .btn-large:hover {
@@ -90,5 +92,6 @@ footer .brand-logo {
 
 .answer {
   width: 100%;
-  /* allow wrap */
+  height: auto;
+  white-space: normal;
 }
