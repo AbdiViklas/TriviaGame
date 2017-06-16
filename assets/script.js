@@ -81,13 +81,13 @@ function displayAnswer(outcomeMessage, object) {
   $("#main-card").html(`
     <div id="main-card-content" class="card-content">
       <span class="card-title extra-margin">${outcomeMessage}</span>
-      <p class="center-align extra-margin">${object.doneMessage}</p>
+      <p class="extra-margin">${object.doneMessage}</p>
       <div class="center-align extra-margin">${object.image}</div>
       <div class="center-align extra-margin">${object.imageCaption}</div>
     </div> <!--/.card-content-->
     <div class="card-action">
       <div class="container center-align">
-        <a id="nextBtn" class="waves-effect waves-light btn-large">continue<i class="material-icons right">forward</i></a>
+        <a id="nextBtn" class="quizBtn waves-effect waves-light btn-large">continue<i class="material-icons right">forward</i></a>
       </div>
     </div> <!--/.card-action-->
   `);
@@ -102,7 +102,7 @@ function displayQuizResults() {
     <div id="main-card-content" class="card-content">
       <span class="card-title">You're done!!</span>
       <h2>Results:</h2>
-      <p>You got ${questionsRight} questions right out of ${questionArray.length}&mdash;that's <span>${questionsRight / questionArray * 100}%!</span></p>
+      <p>You got ${questionsRight} questions right out of ${questionArray.length}&mdash;that's <span>${questionsRight / questionArray.length * 100}%!</span></p>
       <p id="highScore"></p>
       <p>Want to play again?</p>
     </div>
@@ -126,6 +126,8 @@ function runQuiz() {
   }
 }
 
-$(".quizBtn").on("click", function () {
+// to be able to bind this event handler to buttons that haven't been created yet, but will be injected in the future, it's bound to <body> but passed .quizBtn as a "selector"
+$("body").on("click", ".quizBtn", function () {
+  console.log(".quizBtn clicked");
   runQuiz();
 });

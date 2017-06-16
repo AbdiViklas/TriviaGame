@@ -23,8 +23,9 @@ main {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.card .card-title {
+.card .card-content .card-title {
   font-size: 4rem;
+  line-height: 4rem;
   font-weight: bold;
   color: #0072C6;
 }
@@ -74,12 +75,12 @@ footer .brand-logo {
 
 .btn {
   margin: 0.5rem;
+  padding: 0.5rem 2rem;
+  line-height: 1.2rem;
 }
 
 .btn, .btn-large {
   background-color: #1EB53A;
-  padding: 0.5rem 2rem;
-  line-height: 1.2rem;
 }
 
 .btn:hover, .btn-large:hover {
