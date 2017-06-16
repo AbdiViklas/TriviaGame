@@ -27,6 +27,8 @@ var questionArray = [
 
 var seconds; // for the countdown timer
 var questionNumber = 0;
+var questionsRight = 0;
+var highScore = 0;
 
 var questionOrder = [0, 1, 2, 3];
 
@@ -66,6 +68,7 @@ function runQuestion(object) {
   }
   $(".correct").on("click", function () {
     clearInterval(timer);
+    questionsRight++;
     displayAnswer("Correct!", object); // displayAnswer() is passed the object so it can continue to access its remaining properties
   });
   $(".wrong").on("click", function () {
@@ -88,14 +91,30 @@ function displayAnswer(outcomeMessage, object) {
       </div>
     </div> <!--/.card-action-->
   `);
-  $("#nextBtn").on("click", function () {
-    console.log("nextBtn clicked");
-    runQuiz();
-  });
+  // $("#nextBtn").on("click", function () {
+  //   console.log("nextBtn clicked");
+  //   runQuiz();
+  // });
 }
 
 function displayQuizResults() {
-  
+  $("#main-card").html(`
+    <div id="main-card-content" class="card-content">
+      <span class="card-title">You're done!!</span>
+      <h2>Results:</h2>
+      <p>You got ${questionsRight} questions right out of ${questionArray.length}&mdash;that's <span>${questionsRight / questionArray * 100}%!</span></p>
+      <p id="highScore"></p>
+      <p>Want to play again?</p>
+    </div>
+    <div class="card-action">
+      <div class="container center-align">
+        <a id="restartBtn" class="quizBtn waves-effect waves-light btn-large">play again<i class="material-icons right">replay</i></a>
+      </div>
+    </div>
+  `);
+  questionNumber = 0;
+  questionsRight = 0;
+  // highScore using localStorage
 }
 
 function runQuiz() {
@@ -107,6 +126,6 @@ function runQuiz() {
   }
 }
 
-$("#startBtn").on("click", function () {
+$(".quizBtn").on("click", function () {
   runQuiz();
 });
