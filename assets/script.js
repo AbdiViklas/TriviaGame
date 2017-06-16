@@ -45,8 +45,13 @@ var questionOrder = [0, 1, 2, 3];
 
 function runQuestion(object) {
   $("#seconds").html(seconds);
-  // TODO: setTimeout, 20 seconds, timesUp();
-  // TODO: setInterval, every second, seconds--, 
+  setInterval(function() {
+    $("#seconds").html(seconds);
+    if (seconds === 0) {
+      displayAnswer("Time's up!!")
+    }
+    seconds--;
+  }, 1000);
   $("#question").html(object.question);
   questionOrder.sort(function(a, b){return 0.5 - Math.random()}); // randomize question order
   $("#answer" + questionOrder[0]).html(object.correctAnswer).addClass("correct");
