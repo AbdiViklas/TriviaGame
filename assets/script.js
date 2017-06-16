@@ -100,6 +100,7 @@ function displayAnswer(outcomeMessage, object) {
       </div>
     </div> <!--/.card-action-->
   `);
+  $(".determinate").attr("style", "width: " + questionNumber / questionArray.length * 100 + "%");
 }
 
 function displayQuizResults() {

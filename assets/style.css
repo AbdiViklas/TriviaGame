@@ -64,13 +64,18 @@ footer .brand-logo {
 }
 
 .progress-wrapper {
-  width: 100%;
   padding: 0px 50px;
+  width: 100%;
 }
 
 .progress {
-  display: inline-flex;
-  width: 75%;
+  display: inline-flex; /* problem: I can't figure out what to call this div for it to 1) display next to the <h6> and 2) expand to fill the remaining space */
+  width: 100%;
+  background-color: #a8f0b5;
+}
+
+.progress .determinate {
+  background-color: #1EB53A;
 }
 
 .btn {
