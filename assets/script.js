@@ -28,7 +28,16 @@ var questionArray = [
 var seconds; // for the countdown timer
 var questionNumber = 0;
 var questionsRight = 0;
-var highScore = 0;
+
+// checks for the presence of localStorage
+var hasStorage = false; // and will stay false until proven true
+if (window.localStorage) {
+  // localStorage stores everything as strings, so we have to convert it back into a number. If it's empty (first play through) we'll fall back to 0.
+  highScore = parseInt(localStorage.highScore) || 0;
+  localStorage.highScore = highScore; // for the test that follows...
+}
+// Safari in Private Browsing mode still shows localStorage as available, but sets its capacity to 0. So a check: after all that above, if the key highScore is still undefined, localStorage must be functionally unavailable.
+hasStorage = (localStorage.highScore !== undefined); //i.e. "If localStorage.highScore IS NOT undefined, hasStorage = true; else false"
 
 var questionOrder = [0, 1, 2, 3];
 
@@ -91,18 +100,15 @@ function displayAnswer(outcomeMessage, object) {
       </div>
     </div> <!--/.card-action-->
   `);
-  // $("#nextBtn").on("click", function () {
-  //   console.log("nextBtn clicked");
-  //   runQuiz();
-  // });
 }
 
 function displayQuizResults() {
+  var currentScore = Math.round(questionsRight / questionArray.length * 100); // for percentage
   $("#main-card").html(`
     <div id="main-card-content" class="card-content">
       <span class="card-title">You're done!!</span>
       <h2>Results:</h2>
-      <p>You got ${questionsRight} questions right out of ${questionArray.length}&mdash;that's <span>${questionsRight / questionArray.length * 100}%!</span></p>
+      <p>You got ${questionsRight} questions right out of ${questionArray.length}&mdash;that's <span>${currentScore}%!</span></p>
       <p id="highScore"></p>
       <p>Want to play again?</p>
     </div>
@@ -114,7 +120,15 @@ function displayQuizResults() {
   `);
   questionNumber = 0;
   questionsRight = 0;
-  // highScore using localStorage
+  var highScoreMessage = "";
+  if (currentScore > highScore) {
+    highScoreMessage = `Congratulations, you've beaten your previous high score of ${highScore}%!`;
+    highScore = currentScore;
+    localStorage.highScore = highScore;
+  } else {
+    highScoreMessage = `That's great, but it can't top your high score of ${highScore}%!`
+  }
+  $("#highScore").html(highScoreMessage );
 }
 
 function runQuiz() {
