@@ -33,6 +33,11 @@ main {
   border-top: 2px solid rgba(160,160,160,0.5);
 }
 
+.card .card-content .extra-margin {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 #timer {
   font-size: 1.5rem;
 }
