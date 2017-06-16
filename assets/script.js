@@ -45,7 +45,8 @@ var questionOrder = [0, 1, 2, 3];
 
 function runQuestion(object) {
   $("#seconds").html(seconds);
-  // TODO: create timer function and call to update
+  // TODO: setTimeout, 20 seconds, timesUp();
+  // TODO: setInterval, every second, seconds--, 
   $("#question").html(object.question);
   questionOrder.sort(function(a, b){return 0.5 - Math.random()}); // randomize question order
   $("#answer" + questionOrder[0]).html(object.correctAnswer).addClass("correct");
@@ -56,7 +57,11 @@ function runQuestion(object) {
   }
 }
 
-function displayResults() {
+function displayAnswer(outcomeMessage) {
+  // 
+}
+
+function displayQuizResults() {
   
 }
 
@@ -64,7 +69,7 @@ function runQuiz() {
   for (var i = 0; i < questionArray.length; i++) {
     runQuestion(questionArray[i]);
   }
-  displayResults();
+  displayQuizResults();
 }
 
 $("#startBtn").on("click", function () {
