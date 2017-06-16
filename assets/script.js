@@ -47,7 +47,7 @@ function runQuestion(object) {
     <div id="main-card-content" class="card-content">
     <div id="timer" class="right">
     <i class="material-icons">hourglass_empty</i>
-    Time remaining: 0:<span id="seconds">${seconds}</span>
+    Time remaining: <span class="red-text">0:<span id="seconds">${seconds}</span></span>
     </div>
     <h2 id="question" class="extra-margin">${object.question}</h2>
     <div class="card-action">
@@ -90,7 +90,7 @@ function displayAnswer(outcomeMessage, object) {
   $("#main-card").html(`
     <div id="main-card-content" class="card-content">
       <span class="card-title extra-margin">${outcomeMessage}</span>
-      <p class="extra-margin">${object.doneMessage}</p>
+      <p class="extra-margin flow-text">${object.doneMessage}</p>
       <div class="center-align extra-margin">${object.image}</div>
       <div class="center-align extra-margin">${object.imageCaption}</div>
     </div> <!--/.card-content-->
@@ -109,9 +109,9 @@ function displayQuizResults() {
     <div id="main-card-content" class="card-content">
       <span class="card-title">You're done!!</span>
       <h2>Results:</h2>
-      <p>You got ${questionsRight} questions right out of ${questionArray.length}&mdash;that's <span>${currentScore}%!</span></p>
-      <p id="highScore"></p>
-      <p>Want to play again?</p>
+      <p class="flow-text">You got ${questionsRight} questions right out of ${questionArray.length}&mdash;that's <span class="red-text"><span>${currentScore}%!</span></span></p>
+      <p id="highScore" class="flow-text"></p>
+      <p class="flow-text">Want to play again?</p>
     </div>
     <div class="card-action">
       <div class="container center-align">
@@ -123,11 +123,11 @@ function displayQuizResults() {
   questionsRight = 0;
   var highScoreMessage = "";
   if (currentScore > highScore) {
-    highScoreMessage = `Congratulations, you've beaten your previous high score of ${highScore}%!`;
+    highScoreMessage = `Congratulations, you've beaten your previous high score of <span class="red-text">${highScore}%</span>!`;
     highScore = currentScore;
     localStorage.highScore = highScore;
   } else {
-    highScoreMessage = `That's great, but it can't top your high score of ${highScore}%!`
+    highScoreMessage = `That's great, but it can't top your high score of <span class="red-text">${highScore}%</span>!`
   }
   $("#highScore").html(highScoreMessage );
 }
