@@ -1,3 +1,19 @@
+var seconds; // for the countdown timer
+var questionNumber = 0;
+var questionsRight = 0;
+
+// checks for the presence of localStorage
+var hasStorage = false; // and will stay false until proven true
+if (window.localStorage) {
+  // localStorage stores everything as strings, so we have to convert it back into a number. If it's empty (first play through) we'll fall back to 0.
+  highScore = parseInt(localStorage.highScore) || 0;
+  localStorage.highScore = highScore; // for the test that follows...
+}
+// Safari in Private Browsing mode still shows localStorage as available, but sets its capacity to 0. So a check: after all that above, if the key highScore is still undefined, localStorage must be functionally unavailable.
+hasStorage = (localStorage.highScore !== undefined); //i.e. "If localStorage.highScore IS NOT undefined, hasStorage = true; else false"
+
+var questionOrder = [0, 1, 2, 3];
+
 var questionArray = [
   {
     question: "Sierra Leone is located...",
@@ -22,24 +38,16 @@ var questionArray = [
     doneMessage: "At the height of the slave trade, tens of thousands of slaves were funneled through Sierra Leone's ports. Rice cultivation was central to the region, and the rice plantations of the American southern Lowlands placed a high premium on slaves with this knowledge.",
     image: "<img src='assets\\images\\bunce.jpg' class='responsive-img' alt='18th-century woodcut of Bunce Island'>",
     imageCaption: "<a href='https://en.wikipedia.org/wiki/Bunce_Island' target='_blank'>Bunce Island</a>, a slave &ldquo;factory&rdquo; where thousands of slaves were processed before deportation directly to South Carolina and Georgia"
+  },
+  {
+    question: "From 1991-2002 Sierra Leone was devastated by...",
+    correctAnswer: "a brutal civil war",
+    wrongAnswers: ["a series of earthquakes", "severe drought", "international tarriffs"],
+    doneMessage: "The 11 year civil war was marked by widespread atrocities against human rights, and left 50,000 people dead and the public infrastructure gutted. 1,270 schools were destroyed, many hospitals were destroyed or looted, and many healthcare professionals fled the country.",
+    image: "<img src='assets\\images\\school.jpg' class='responsive-img' alt='A school near Koindu, damaged in the civil war'>",
+    imageCaption: "A school near Koindu, damaged in the civil war"
   }
 ];
-
-var seconds; // for the countdown timer
-var questionNumber = 0;
-var questionsRight = 0;
-
-// checks for the presence of localStorage
-var hasStorage = false; // and will stay false until proven true
-if (window.localStorage) {
-  // localStorage stores everything as strings, so we have to convert it back into a number. If it's empty (first play through) we'll fall back to 0.
-  highScore = parseInt(localStorage.highScore) || 0;
-  localStorage.highScore = highScore; // for the test that follows...
-}
-// Safari in Private Browsing mode still shows localStorage as available, but sets its capacity to 0. So a check: after all that above, if the key highScore is still undefined, localStorage must be functionally unavailable.
-hasStorage = (localStorage.highScore !== undefined); //i.e. "If localStorage.highScore IS NOT undefined, hasStorage = true; else false"
-
-var questionOrder = [0, 1, 2, 3];
 
 function runQuestion(object) {
   seconds = 20; // reset after previous question
