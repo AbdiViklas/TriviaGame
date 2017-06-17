@@ -132,11 +132,16 @@ function displayAnswer(outcomeMessage, object) {
 
 function displayQuizResults() {
   var currentScore = Math.round(questionsRight / questionArray.length * 100); // for percentage
+  // to avoid saying "You got 1 questions right," add "s" only for numbers other than 1
+  var plural = "s";
+  if (questionsRight === 1) {
+    plural = "";
+  }
   $("#main-card").html(`
     <div id="main-card-content" class="card-content">
       <span class="card-title">You're done!!</span>
       <h2>Results:</h2>
-      <p class="flow-text">You got ${questionsRight} questions right out of ${questionArray.length}&mdash;that's <span class="red-text">${currentScore}%</span>!</p>
+      <p class="flow-text">You got ${questionsRight} question${plural} right out of ${questionArray.length}&mdash;that's <span class="red-text">${currentScore}%</span>!</p>
       <p id="highScore" class="flow-text"></p>
       <p class="flow-text">Want to play again?</p>
     </div>
