@@ -48,12 +48,12 @@ var questionArray = [
     imageCaption: "A school near Koindu, damaged in the civil war"
   },
   {
-    question: "From 1991-2002 Sierra Leone was devastated by...",
-    correctAnswer: "a brutal civil war",
-    wrongAnswers: ["a series of earthquakes", "severe drought", "international tarriffs"],
-    doneMessage: "The 11 year civil war was marked by widespread atrocities against human rights, and left 50,000 people dead and the public infrastructure gutted. 1,270 schools were destroyed, many hospitals were destroyed or looted, and many healthcare professionals fled the country.",
-    image: "<img src='assets\\images\\school.jpg' class='responsive-img' alt='A school near Koindu, damaged in the civil war'>",
-    imageCaption: "A school near Koindu, damaged in the civil war"
+    question: "The majority of Sierra Leone's population are employed in...",
+    correctAnswer: "agriculture",
+    wrongAnswers: ["diamond production", "tourism", "fishing"],
+    doneMessage: "Agriculture has been an important part of West Africa for centuries. Today it represents 58% of Sierra Leone's GDP, and 80% of the population are involved in it. Two thirds of the population are involved in subsistence farming.<br>Nevertheless, Sierra Leone is a net importer of food, and although the most common crop is rice, it still imports rice.",
+    image: "<img src='assets\\images\\rice_farmer.jpg' class='responsive-img' alt='A Sierra Leonean rice farmer'>",
+    imageCaption: "A Sierra Leonean rice farmer"
   }
 ];
 
