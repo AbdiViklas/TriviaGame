@@ -46,6 +46,14 @@ var questionArray = [
     doneMessage: "The 11 year civil war was marked by widespread atrocities against human rights, and left 50,000 people dead and the public infrastructure gutted. 1,270 schools were destroyed, many hospitals were destroyed or looted, and many healthcare professionals fled the country.",
     image: "<img src='assets\\images\\school.jpg' class='responsive-img' alt='A school near Koindu, damaged in the civil war'>",
     imageCaption: "A school near Koindu, damaged in the civil war"
+  },
+  {
+    question: "From 1991-2002 Sierra Leone was devastated by...",
+    correctAnswer: "a brutal civil war",
+    wrongAnswers: ["a series of earthquakes", "severe drought", "international tarriffs"],
+    doneMessage: "The 11 year civil war was marked by widespread atrocities against human rights, and left 50,000 people dead and the public infrastructure gutted. 1,270 schools were destroyed, many hospitals were destroyed or looted, and many healthcare professionals fled the country.",
+    image: "<img src='assets\\images\\school.jpg' class='responsive-img' alt='A school near Koindu, damaged in the civil war'>",
+    imageCaption: "A school near Koindu, damaged in the civil war"
   }
 ];
 
@@ -69,6 +77,9 @@ function runQuestion(object) {
     </div>
   `);
   var timer = setInterval(function() {
+    if (seconds - 10 < 0) {
+      seconds = "0" + seconds;
+    }
     $("#seconds").html(seconds);
     if (seconds === 0) {
       clearInterval(timer);
