@@ -54,6 +54,14 @@ var questionArray = [
     doneMessage: "Agriculture has been an important part of West Africa for centuries. Today it represents 58% of Sierra Leone's GDP, and 80% of the population are involved in it. Two thirds of the population are involved in subsistence farming.<br>Nevertheless, Sierra Leone is a net importer of food, and although the most common crop is rice, it still imports rice.",
     image: "<img src='assets\\images\\rice_farmer.jpg' class='responsive-img' alt='A Sierra Leonean rice farmer'>",
     imageCaption: "A Sierra Leonean rice farmer"
+  },
+  {
+    question: "The majority of Sierra Leone's population are employed in...",
+    correctAnswer: "agriculture",
+    wrongAnswers: ["diamond production", "tourism", "fishing"],
+    doneMessage: "Agriculture has been an important part of West Africa for centuries. Today it represents 58% of Sierra Leone's GDP, and 80% of the population are involved in it. Two thirds of the population are involved in subsistence farming.<br>Nevertheless, Sierra Leone is a net importer of food, and although the most common crop is rice, it still imports rice.",
+    image: "<img src='assets\\images\\rice_farmer.jpg' class='responsive-img' alt='A Sierra Leonean rice farmer'>",
+    imageCaption: "A Sierra Leonean rice farmer"
   }
 ];
 
@@ -128,7 +136,7 @@ function displayQuizResults() {
     <div id="main-card-content" class="card-content">
       <span class="card-title">You're done!!</span>
       <h2>Results:</h2>
-      <p class="flow-text">You got ${questionsRight} questions right out of ${questionArray.length}&mdash;that's <span class="red-text"><span>${currentScore}%!</span></span></p>
+      <p class="flow-text">You got ${questionsRight} questions right out of ${questionArray.length}&mdash;that's <span class="red-text">${currentScore}%</span>!</p>
       <p id="highScore" class="flow-text"></p>
       <p class="flow-text">Want to play again?</p>
     </div>
