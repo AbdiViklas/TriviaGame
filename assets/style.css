@@ -116,6 +116,6 @@ footer .brand-logo {
 }
 
 .switch {
-  border-left: 1px solid gray;
-  padding-left: 5px;
+  border-right: 1px solid gray;
+  padding-right: 5px;
 }

@@ -115,7 +115,6 @@ function displayAnswer(outcomeMessage, object) {
       <p class="extra-margin flow-text">${object.doneMessage}</p>
       <div class="center-align extra-margin">${object.image}</div>
       <div class="center-align extra-margin">${object.imageCaption}</div>
-      <div class="extra-margin inline-block">Next question in <span id="moveOnSeconds">20</span> seconds!</div>
       <div class="switch inline-block">
         Auto-advance:
         <label>
@@ -125,6 +124,7 @@ function displayAnswer(outcomeMessage, object) {
           On
         </label>
       </div>
+      <div id="nextQuestion" class="extra-margin inline-block">Next question in <span id="moveOnSeconds">20</span> seconds!</div>
     </div> <!--/.card-content-->
     <div class="card-action">
       <div class="container center-align">
@@ -149,9 +149,11 @@ function displayAnswer(outcomeMessage, object) {
   runTimer();
   $("#autoPlaySwitch").on("change", function() {
     if ($("#autoPlaySwitch").prop("checked")) {
+      $("#nextQuestion").css("visibility", "visible");
       autoPlay = true;
       runTimer();
     } else {
+      $("#nextQuestion").css("visibility", "hidden");
       autoPlay = false;
       autoPlayCheck = ""; // set toggle to "OFF" on future page loads by removing attribute "checked"
     }
