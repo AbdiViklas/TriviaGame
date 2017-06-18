@@ -1,6 +1,8 @@
 var seconds; // for the countdown timer
 var questionNumber = 0;
 var questionsRight = 0;
+var autoPlay = true;
+var autoPlayCheck = "checked";
 
 // checks for the presence of localStorage
 var hasStorage = false; // and will stay false until proven true
@@ -106,19 +108,19 @@ function runQuestion(object) {
 }
 
 function displayAnswer(outcomeMessage, object) {
-  seconds = 20;
+  seconds = 19;
   $("#main-card").html(`
     <div id="main-card-content" class="card-content">
       <span class="card-title extra-margin">${outcomeMessage}</span>
       <p class="extra-margin flow-text">${object.doneMessage}</p>
       <div class="center-align extra-margin">${object.image}</div>
       <div class="center-align extra-margin">${object.imageCaption}</div>
-      <div class="extra-margin">Next question in <span id="moveOnSeconds"></span> seconds!</div>
-      <div class="switch">
+      <div class="extra-margin inline-block">Next question in <span id="moveOnSeconds">20</span> seconds!</div>
+      <div class="switch inline-block">
         Auto-advance:
         <label>
           Off
-          <input id="autoPlaySwitch" type="checkbox" checked>
+          <input id="autoPlaySwitch" type="checkbox" ${autoPlayCheck}>
           <span class="lever"></span>
           On
         </label>
@@ -133,21 +135,25 @@ function displayAnswer(outcomeMessage, object) {
   $(".determinate").attr("style", "width: " + questionNumber / questionArray.length * 100 + "%");
   function runTimer() {
     var moveOnTimer = setInterval(function() {
-      $("#moveOnSeconds").html(seconds);
-      if (!$("#autoPlaySwitch").prop("checked")) { // If "auto-advance" toggle is set to off...
+      if (!autoPlay) { // If "auto-advance" toggle is set to off...
         clearInterval(moveOnTimer);
       } else if (seconds === 0) {
         clearInterval(moveOnTimer);
         runQuiz();
       } else {
-      seconds--;
+        $("#moveOnSeconds").html(seconds);
+        seconds--;
       }
     }, 1000);
   }
   runTimer();
   $("#autoPlaySwitch").on("change", function() {
     if ($("#autoPlaySwitch").prop("checked")) {
+      autoPlay = true;
       runTimer();
+    } else {
+      autoPlay = false;
+      autoPlayCheck = ""; // set toggle to "OFF" on future page loads by removing attribute "checked"
     }
   });
 }
@@ -200,3 +206,9 @@ $("body").on("click", ".quizBtn", function () {
   console.log(".quizBtn clicked");
   runQuiz();
 });
+
+// function to replace low-res images with full-res
+// function upgradeImg(imgElement) {
+//   var source = imgElement.attr("src") + "-full";
+//   imgElement.attr("src", source);
+// }

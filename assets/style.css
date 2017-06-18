@@ -18,7 +18,7 @@ main {
 #main-card {
   /*height: 75vh;*/
   min-width: 50vw;
-  max-width: 99vw;
+  max-width: 1000px;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.7);
 }
@@ -50,6 +50,7 @@ main {
 footer {
   background-color: rgba(255, 255, 255, 0.5) !important;
   padding: 2vh !important;
+  margin-top: 20px;
 }
 
 footer * {
@@ -110,6 +111,11 @@ footer .brand-logo {
   width: 2ch;
 }
 
-.switch {
+.inline-block {
   display: inline-block;
+}
+
+.switch {
+  border-left: 1px solid gray;
+  padding-left: 5px;
 }
