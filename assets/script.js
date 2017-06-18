@@ -42,6 +42,14 @@ var questionArray = [
     imageCaption: "<a href='https://en.wikipedia.org/wiki/Bunce_Island' target='_blank'>Bunce Island</a>, a slave &ldquo;factory&rdquo; where thousands of slaves were processed before deportation directly to South Carolina and Georgia"
   },
   {
+    question: "Then, in the 19th century, Sierra Leone's population was shaped by...",
+    correctAnswer: "the relocation of thousands of freed slaves",
+    wrongAnswers: ["mass immigration from Eastern Europe", "sweeping cholera epidemics", "mass emigration to Mali"],
+    doneMessage: "Sierra Leone was targeted as a destination for resettlement, starting with thousands of <a href='https://en.wikipedia.org/wiki/Black_Loyalist' target='_blank'>Black Loyalists</a> who had fought for Britain in the American Revolution. After Britain outlawed slavery in 1807, Sierra Leone was also a base for naval forces patrolling to intercept illegal slave ships, and slaves liberated by these forces were returned to Sierra Leone (though often to be sold into indentured apprenticeship, or conscripted into the navy).",
+    image: "<img src='assets\\images\\cotton-tree.jpg' class='responsive-img' alt='Cotton Tree in Freetown'>",
+    imageCaption: "The iconic <a href='https://en.wikipedia.org/wiki/Cotton_Tree_(Sierra_Leone)' target='_blank'>Cotton Tree</a> around which settlers built Freetown"
+  },
+  {
     question: "From 1991-2002 Sierra Leone was devastated by...",
     correctAnswer: "a brutal civil war",
     wrongAnswers: ["a series of earthquakes", "severe drought", "international tarriffs"],
@@ -60,6 +68,7 @@ var questionArray = [
 ];
 
 function runQuestion(object) {
+  clearInterval(moveOnTimer);
   seconds = 20; // reset after previous question
   $("#main-card").html(`
     <div id="main-card-content" class="card-content">
@@ -154,10 +163,15 @@ function displayAnswer(outcomeMessage, object) {
       runTimer();
     } else {
       $("#nextQuestion").css("visibility", "hidden");
+      clearInterval(moveOnTimer);
       autoPlay = false;
       autoPlayCheck = ""; // set toggle to "OFF" on future page loads by removing attribute "checked"
     }
   });
+  $(".quizBtn").on("click", function () {
+    clearInterval(moveOnTimer);
+    runQuiz();
+  })
 }
 
 function displayQuizResults() {
