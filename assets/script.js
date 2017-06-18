@@ -54,14 +54,6 @@ var questionArray = [
     doneMessage: "Agriculture has been an important part of West Africa for centuries. Today it represents 58% of Sierra Leone's GDP, and 80% of the population are involved in it. Two thirds of the population are involved in subsistence farming.<br>Nevertheless, Sierra Leone is a net importer of food, and although the most common crop is rice, it still imports rice.",
     image: "<img src='assets\\images\\rice_farmer.jpg' class='responsive-img' alt='A Sierra Leonean rice farmer'>",
     imageCaption: "A Sierra Leonean rice farmer"
-  },
-  {
-    question: "The majority of Sierra Leone's population are employed in...",
-    correctAnswer: "agriculture",
-    wrongAnswers: ["diamond production", "tourism", "fishing"],
-    doneMessage: "Agriculture has been an important part of West Africa for centuries. Today it represents 58% of Sierra Leone's GDP, and 80% of the population are involved in it. Two thirds of the population are involved in subsistence farming.<br>Nevertheless, Sierra Leone is a net importer of food, and although the most common crop is rice, it still imports rice.",
-    image: "<img src='assets\\images\\rice_farmer.jpg' class='responsive-img' alt='A Sierra Leonean rice farmer'>",
-    imageCaption: "A Sierra Leonean rice farmer"
   }
 ];
 
