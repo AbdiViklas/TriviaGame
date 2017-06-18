@@ -105,3 +105,11 @@ footer .brand-logo {
   height: auto;
   white-space: normal;
 }
+
+#moveOnSeconds {
+  width: 2ch;
+}
+
+.switch {
+  display: inline-block;
+}

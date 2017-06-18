@@ -106,12 +106,23 @@ function runQuestion(object) {
 }
 
 function displayAnswer(outcomeMessage, object) {
+  seconds = 20;
   $("#main-card").html(`
     <div id="main-card-content" class="card-content">
       <span class="card-title extra-margin">${outcomeMessage}</span>
       <p class="extra-margin flow-text">${object.doneMessage}</p>
       <div class="center-align extra-margin">${object.image}</div>
       <div class="center-align extra-margin">${object.imageCaption}</div>
+      <div class="extra-margin">Next question in <span id="moveOnSeconds"></span> seconds!</div>
+      <div class="switch">
+        Auto-advance:
+        <label>
+          Off
+          <input id="autoPlaySwitch" type="checkbox" checked>
+          <span class="lever"></span>
+          On
+        </label>
+      </div>
     </div> <!--/.card-content-->
     <div class="card-action">
       <div class="container center-align">
@@ -120,6 +131,25 @@ function displayAnswer(outcomeMessage, object) {
     </div> <!--/.card-action-->
   `);
   $(".determinate").attr("style", "width: " + questionNumber / questionArray.length * 100 + "%");
+  function runTimer() {
+    var moveOnTimer = setInterval(function() {
+      $("#moveOnSeconds").html(seconds);
+      if (!$("#autoPlaySwitch").prop("checked")) { // If "auto-advance" toggle is set to off...
+        clearInterval(moveOnTimer);
+      } else if (seconds === 0) {
+        clearInterval(moveOnTimer);
+        runQuiz();
+      } else {
+      seconds--;
+      }
+    }, 1000);
+  }
+  runTimer();
+  $("#autoPlaySwitch").on("change", function() {
+    if ($("#autoPlaySwitch").prop("checked")) {
+      runTimer();
+    }
+  });
 }
 
 function displayQuizResults() {
