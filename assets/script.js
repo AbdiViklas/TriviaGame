@@ -80,7 +80,15 @@ var questionArray = [
     wrongAnswers: ["Hotel Rwanda", "Invictus", "I Dreamed of Africa"],
     doneMessage: "<span class='italic'>Blood Diamond</span> tells a fictional story of diamond smuggling in the midst of Sierra Leone's civil war. Although set in Sierra Leone, <a href='https://mightyminnow.wordpress.com/2007/05/30/blood-diamond-should-have-been-shot-in-sierra-leone/' target='_blank'>the movie was filmed mostly in</a> South Africa and Mozambique.",
     image: "<img src='assets\\images\\blood-diamond.jpg' class='responsive-img answer-img' alt='still from the movie Blood Diamond'>",
-    imageCaption: "Still from the movie <span class='italic'>Blood Diamond</span>s"
+    imageCaption: "Still from the movie <span class='italic'>Blood Diamond</span>"
+  },
+  {
+    question: "Which of the following animals is NOT found in the wild in Sierra Leone?",
+    correctAnswer: "cheetah",
+    wrongAnswers: ["chimpanzee", "pygmy hippopotamus", "African manatee"],
+    doneMessage: "Sierra Leone has a <a href='https://en.wikipedia.org/wiki/Wildlife_of_Sierra_Leone' target='_blank'>diverse wildlife population</a>, since it encompasses many different biomes--coastal beach, mangrove swamps, and inland rainforest. The endangered pygmy hippopotamus can be found in the Gola region.",
+    image: "<img src='assets\\images\\pygmy-hippo.jpg' class='responsive-img answer-img' alt='A pygmy hippopotamus'>",
+    imageCaption: "A pygmy hippopotamus"
   }
 ];
 
