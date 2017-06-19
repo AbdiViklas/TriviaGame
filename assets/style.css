@@ -47,6 +47,10 @@ main {
   margin-bottom: 1.5rem;
 }
 
+.italic {
+  font-style: italic;
+}
+
 #timer {
   font-size: 1.5rem;
 }

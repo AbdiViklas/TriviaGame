@@ -73,6 +73,14 @@ var questionArray = [
     doneMessage: "Krio is both <a href='https://en.wikipedia.org/wiki/Krio_language' target='_blank'>a language</a> and <a href='https://en.wikipedia.org/wiki/Sierra_Leone_Creole_people' target='_blank'>an ethnic group</a>, a synthesis of cultures brought from the American South, surrounding West African peoples, and especially Jamaica. Although the Krio descendants of freed slaves represent only 1% of the national population, the language unites Sierra Leone's other ethnic groups, primarily the <a href='https://en.wikipedia.org/wiki/Temne_people' target='_blank'>Temne</a> and the <a href='https://en.wikipedia.org/wiki/Mende_people' target='_blank'>Mende</a>.",
     image: "<img src='assets\\images\\krio-gullah.jpg' class='responsive-img' alt='Comparison of Krio and Gullah'>",
     imageCaption: "Comparison of Krio and <a href='https://en.wikipedia.org/wiki/Gullah' target='_blank'>Gullah</a>"
+  },
+  {
+    question: "What recent movie is set in Sierra Leone?",
+    correctAnswer: "Blood Diamond",
+    wrongAnswers: ["Hotel Rwanda", "Invictus", "I Dreamed of Africa"],
+    doneMessage: "<span class='italic'>Blood Diamond</span> tells a fictional story of diamond smuggling in the midst of Sierra Leone's civil war. Although set in Sierra Leone, <a href='https://mightyminnow.wordpress.com/2007/05/30/blood-diamond-should-have-been-shot-in-sierra-leone/' target='_blank'>the movie was filmed mostly in</a> South Africa and Mozambique.",
+    image: "<img src='assets\\images\\blood-diamond.jpg' class='responsive-img' alt='still from the movie Blood Diamond'>",
+    imageCaption: "Still from the movie <span class='italic'>Blood Diamond</span>s"
   }
 ];
 
