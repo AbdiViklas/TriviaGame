@@ -86,7 +86,7 @@ var questionArray = [
     question: "Which of the following animals is NOT found in the wild in Sierra Leone?",
     correctAnswer: "cheetah",
     wrongAnswers: ["chimpanzee", "pygmy hippopotamus", "African manatee"],
-    doneMessage: "Sierra Leone has a <a href='https://en.wikipedia.org/wiki/Wildlife_of_Sierra_Leone' target='_blank'>diverse wildlife population</a>, since it encompasses many different biomes--coastal beach, mangrove swamps, and inland rainforest. The endangered pygmy hippopotamus can be found in the Gola region.",
+    doneMessage: "Sierra Leone has a <a href='https://en.wikipedia.org/wiki/Wildlife_of_Sierra_Leone' target='_blank'>diverse wildlife population</a>, since it encompasses many different biomes--coastal beach, mangrove swamps, and inland rainforest. The endangered pygmy hippopotamus can be found in the Gola region. No cheetahs, though.",
     image: "<img src='assets\\images\\pygmy-hippo.jpg' class='responsive-img answer-img' alt='A pygmy hippopotamus'>",
     imageCaption: "A pygmy hippopotamus"
   }
