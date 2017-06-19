@@ -1,4 +1,5 @@
 var seconds; // for the countdown timer
+var timer;
 var questionNumber = 0;
 var questionsRight = 0;
 var autoPlay = true;
@@ -68,7 +69,6 @@ var questionArray = [
 ];
 
 function runQuestion(object) {
-  clearInterval(moveOnTimer);
   seconds = 20; // reset after previous question
   $("#main-card").html(`
     <div id="main-card-content" class="card-content">
@@ -87,13 +87,15 @@ function runQuestion(object) {
     </div>
     </div>
   `);
-  var timer = setInterval(function() {
+  timer = setInterval(function() {
+    console.log("timer run with value " + seconds + " seconds");
     if (seconds - 10 < 0) {
       seconds = "0" + seconds;
     }
     $("#seconds").html(seconds);
     if (seconds === 0) {
       clearInterval(timer);
+      console.log("time up");
       displayAnswer("Time's up!!", object);
     }
     seconds--;
@@ -117,6 +119,7 @@ function runQuestion(object) {
 }
 
 function displayAnswer(outcomeMessage, object) {
+  console.log("displayAnswer called");
   seconds = 19;
   $("#main-card").html(`
     <div id="main-card-content" class="card-content">
@@ -143,11 +146,11 @@ function displayAnswer(outcomeMessage, object) {
   `);
   $(".determinate").attr("style", "width: " + questionNumber / questionArray.length * 100 + "%");
   function runTimer() {
-    var moveOnTimer = setInterval(function() {
+    timer = setInterval(function() {
       if (!autoPlay) { // If "auto-advance" toggle is set to off...
-        clearInterval(moveOnTimer);
+        clearInterval(timer);
       } else if (seconds === 0) {
-        clearInterval(moveOnTimer);
+        clearInterval(timer);
         runQuiz();
       } else {
         $("#moveOnSeconds").html(seconds);
@@ -163,13 +166,13 @@ function displayAnswer(outcomeMessage, object) {
       runTimer();
     } else {
       $("#nextQuestion").css("visibility", "hidden");
-      clearInterval(moveOnTimer);
+      clearInterval(timer);
       autoPlay = false;
       autoPlayCheck = ""; // set toggle to "OFF" on future page loads by removing attribute "checked"
     }
   });
   $(".quizBtn").on("click", function () {
-    clearInterval(moveOnTimer);
+    clearInterval(timer);
     runQuiz();
   })
 }
