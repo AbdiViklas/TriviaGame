@@ -116,6 +116,9 @@ footer .brand-logo {
 }
 
 .switch {
-  border-right: 1px solid gray;
   padding-right: 5px;
+}
+
+#nextQuestion {
+  border-left: 1px solid gray;
 }

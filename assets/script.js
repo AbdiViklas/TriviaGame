@@ -93,7 +93,7 @@ function runQuestion(object) {
       seconds = "0" + seconds;
     }
     $("#seconds").html(seconds);
-    if (seconds === 0) {
+    if (seconds < 1) {
       clearInterval(timer);
       console.log("time up");
       displayAnswer("Time's up!!", object);
