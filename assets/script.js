@@ -1,9 +1,9 @@
 var seconds; // for the countdown timer
-var timer;
+var timer; // to be the interval ID
 var questionNumber = 0;
 var questionsRight = 0;
 var autoPlay = true;
-var autoPlayCheck = "checked";
+var autoPlayCheck = "checked"; // to add an attribute to a checkbox
 
 // checks for the presence of localStorage
 var hasStorage = false; // and will stay false until proven true
@@ -185,6 +185,7 @@ function displayAnswer(outcomeMessage, object) {
     if ($("#autoPlaySwitch").prop("checked")) {
       $("#nextQuestion").css("visibility", "visible");
       autoPlay = true;
+      autoPlayCheck = "checked";
       runTimer();
     } else {
       $("#nextQuestion").css("visibility", "hidden");
@@ -223,6 +224,9 @@ function displayQuizResults() {
   questionNumber = 0;
   questionsRight = 0;
   var highScoreMessage = "";
+  // TODO: add more appropriate messages for:
+  // currentScore or highScore = 0
+  // currentScore === highScore
   if (currentScore > highScore) {
     highScoreMessage = `Congratulations, you've beaten your previous high score of <span class="red-text">${highScore}%</span>!`;
     highScore = currentScore;
@@ -247,8 +251,4 @@ $("body").on("click", ".quizBtn", function () {
   runQuiz();
 });
 
-// function to replace low-res images with full-res
-// function upgradeImg(imgElement) {
-//   var source = imgElement.attr("src") + "-full";
-//   imgElement.attr("src", source);
-// }
+// TODO: function to replace low-res images with full-res
