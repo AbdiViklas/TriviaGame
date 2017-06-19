@@ -65,6 +65,14 @@ var questionArray = [
     doneMessage: "Agriculture has been an important part of West Africa for centuries. Today it represents 58% of Sierra Leone's GDP, and 80% of the population are involved in it. Two thirds of the population are involved in subsistence farming.<br>Nevertheless, Sierra Leone is a net importer of food, and although the most common crop is rice, it still imports rice.",
     image: "<img src='assets\\images\\rice_farmer.jpg' class='responsive-img' alt='A Sierra Leonean rice farmer'>",
     imageCaption: "A Sierra Leonean rice farmer"
+  },
+  {
+    question: "Although the official language of Sierra Leone is English, the language of everyday life for 97% of the population is...",
+    correctAnswer: "Krio",
+    wrongAnswers: ["French", "Swahili", "Mandinka"],
+    doneMessage: "Krio is both <a href='https://en.wikipedia.org/wiki/Krio_language' target='_blank'>a language</a> and <a href='https://en.wikipedia.org/wiki/Sierra_Leone_Creole_people' target='_blank'>an ethnic group</a>, a synthesis of cultures brought from the American South, surrounding West African peoples, and especially Jamaica. Although the Krio descendants of freed slaves represent only 1% of the national population, the language unites Sierra Leone's other ethnic groups, primarily the <a href='https://en.wikipedia.org/wiki/Temne_people' target='_blank'>Temne</a> and the <a href='https://en.wikipedia.org/wiki/Mende_people' target='_blank'>Mende</a>.",
+    image: "<img src='assets\\images\\krio-gullah.jpg' class='responsive-img' alt='Comparison of Krio and Gullah'>",
+    imageCaption: "Comparison of Krio and <a href='https://en.wikipedia.org/wiki/Gullah' target='_blank'>Gullah</a>"
   }
 ];
 
@@ -76,7 +84,7 @@ function runQuestion(object) {
     <i class="material-icons">hourglass_empty</i>
     Time remaining: <span class="red-text">0:<span id="seconds">${seconds}</span></span>
     </div>
-    <h2 id="question" class="extra-margin">${object.question}</h2>
+    <h2 id="question" class="extra-margin flow-text">${object.question}</h2>
     <div class="card-action">
     <div class="container center-align">
     <a id="answer0" class="waves-effect waves-light btn answer"></a>
@@ -88,14 +96,12 @@ function runQuestion(object) {
     </div>
   `);
   timer = setInterval(function() {
-    console.log("timer run with value " + seconds + " seconds");
     if (seconds - 10 < 0) {
       seconds = "0" + seconds;
     }
     $("#seconds").html(seconds);
     if (seconds < 1) {
       clearInterval(timer);
-      console.log("time up");
       displayAnswer("Time's up!!", object);
     }
     seconds--;
@@ -119,11 +125,10 @@ function runQuestion(object) {
 }
 
 function displayAnswer(outcomeMessage, object) {
-  console.log("displayAnswer called");
   seconds = 19;
   $("#main-card").html(`
     <div id="main-card-content" class="card-content">
-      <span class="card-title extra-margin">${outcomeMessage}</span>
+      <span class="card-title flow-text extra-margin">${outcomeMessage}</span>
       <p class="extra-margin flow-text">${object.doneMessage}</p>
       <div class="center-align extra-margin">${object.image}</div>
       <div class="center-align extra-margin">${object.imageCaption}</div>
@@ -149,6 +154,7 @@ function displayAnswer(outcomeMessage, object) {
     timer = setInterval(function() {
       if (!autoPlay) { // If "auto-advance" toggle is set to off...
         clearInterval(timer);
+        $("#nextQuestion").css("visibility", "hidden");
       } else if (seconds === 0) {
         clearInterval(timer);
         runQuiz();
@@ -186,7 +192,7 @@ function displayQuizResults() {
   }
   $("#main-card").html(`
     <div id="main-card-content" class="card-content">
-      <span class="card-title">You're done!!</span>
+      <span class="card-title flow-text">You're done!!</span>
       <h2>Results:</h2>
       <p class="flow-text">You got ${questionsRight} question${plural} right out of ${questionArray.length}&mdash;that's <span class="red-text">${currentScore}%</span>!</p>
       <p id="highScore" class="flow-text"></p>
@@ -222,7 +228,6 @@ function runQuiz() {
 
 // to be able to bind this event handler to buttons that haven't been created yet, but will be injected in the future, it's bound to <body> but passed .quizBtn as a "selector"
 $("body").on("click", ".quizBtn", function () {
-  console.log(".quizBtn clicked");
   runQuiz();
 });
 

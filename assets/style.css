@@ -34,6 +34,10 @@ main {
   font-weight: bold;
 }
 
+.card .card-content h2 {
+  font-weight: bold;
+}
+
 .card .card-action {
   border-top: 2px solid rgba(160,160,160,0.5);
 }
@@ -121,4 +125,5 @@ footer .brand-logo {
 
 #nextQuestion {
   border-left: 1px solid gray;
+  padding-left: 5px;
 }
