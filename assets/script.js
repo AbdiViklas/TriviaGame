@@ -251,8 +251,6 @@ function runQuiz() {
 }
 
 // to be able to bind this event handler to buttons that haven't been created yet, but will be injected in the future, it's bound to <body> but passed .quizBtn as a "selector"
-$("body").on("click", ".quizBtn", function () {
-  runQuiz();
-});
+$("body").on("click", ".quizBtn", runQuiz);
 
 // TODO: function to replace low-res images with full-res
